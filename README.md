@@ -6,23 +6,20 @@ API utilizando Zend Expressive 3 com MongoDB.
 
 1 - Faça o clone do repositório
 
-2 - Rode o comando abaixo
+2 - Dê permissão de escrita na pasta api/data
+
+```sh
+chmod 777 -R api/data
+```
+
+3 - Rode o comando abaixo para subir os containers do sistema
 ```sh
 docker-compose up -d
 ```
 
-3 - Após subir o container, é necessário instalar as dependências do composer
+4 - Após subir o container, é necessário instalar as dependências do composer
 ```sh
 docker exec -it -u 0 NOMEDOCONTAINER composer install
-```
-  - NOMEDOCONTAINER = Nome do container PHP criado
-
-4 - Caso ocorra o erro abaixo, é necessário dar permissão de escrita na pasta data
-```
-Warning: file_put_contents(data/cache/config-cache.php): failed to open stream: Permission denied in /var/www/html/vendor/zendframework/zend-config-aggregator/src/ConfigAggregator.php on line 271
-```
-```sh
-docker exec -it -u  0 NOMEDOCONTAINER chmod 777 -R data
 ```
   - NOMEDOCONTAINER = Nome do container PHP criado
 
